@@ -1,5 +1,7 @@
 import { BaseDomain } from '@shared/domain'
-import { Column } from 'typeorm'
+import { MaritalStatus } from '@shared/enums'
+import { nanoIdGenerator } from '@shared/utils'
+import { BeforeInsert, BeforeUpdate, Column } from 'typeorm'
 
 
 export class User extends BaseDomain {
@@ -42,10 +44,37 @@ export class User extends BaseDomain {
 
     @Column(
         {
+            type: 'varchar',
+            length: 11,
+            unique: true,
+        }
+    )
+    document!: string
+
+    @Column(
+        {
+            type: 'enum',
+            enum: MaritalStatus
+        }
+    )
+    maritalStatus!: MaritalStatus
+
+    @Column(
+        {
             name: 'birth_date',
             type: 'date',
             nullable: true,
         }
     )
     birthDate!: Date
+
+    @BeforeInsert()
+    generateId() {
+        this.id =  nanoIdGenerator('user_')
+    }
+
+    @BeforeUpdate()
+    beforeUpdate() {
+        this.updatedAt = new Date()
+    }
 }
