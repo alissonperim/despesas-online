@@ -14,12 +14,12 @@ O operador é o responsável por adminitrar os cadastros de alugueis de um locad
   1. O operador não deve estar previamente cadastrado.
 - **Fluxo Principal**:
   1. O usuário acessa a página de cadastro.
-  2. O usuário preenche o formulário de cadastro com seus [dados](./renter-data.md).
+  2. O usuário preenche o formulário de cadastro com seus [dados](./operator-data.md).
   3. O sistema valida os dados fornecidos.
-  4. O sistema cria um novo cadastro de locador.
-  5. O sistema envia um email de confirmação para o locador.
-  6. O locador confirma o cadastro clicando no link enviado por email.
-  7. O sistema ativa a conta do locador.
+  4. O sistema cria um novo cadastro de operador.
+  5. O sistema envia um email de confirmação para o operador.
+  6. O operador confirma o cadastro clicando no link enviado por email.
+  7. O sistema ativa a conta do operador.
 - **Fluxos Alternativos**:
   - **F1**: Documento já registrado
     1. O sistema informa ao usuário que o documento fornecido já está cadastrado
@@ -28,7 +28,7 @@ O operador é o responsável por adminitrar os cadastros de alugueis de um locad
   - **F3**: Dados inválidos.
     1. O sistema informa ao usuário sobre os dados inválidos e solicita a correção.
 - **Pós-condições**:
-  1. O usuário está cadastrado e com a conta ativa no sistema.
+  1. O usuário está cadastrado e com a conta de operador ativa no sistema.
 
 ## Outros Casos de Uso
 - [Login de Usuário](documentation/use_cases/user_login.md)

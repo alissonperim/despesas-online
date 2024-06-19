@@ -1,6 +1,6 @@
 import { BaseDomain } from '@shared/domain'
 import { MaritalStatus } from '@shared/enums'
-import { nanoIdGenerator } from '@shared/utils'
+import { ulidGenerator } from '@shared/utils'
 import { BeforeInsert, BeforeUpdate, Column } from 'typeorm'
 
 
@@ -70,7 +70,7 @@ export class User extends BaseDomain {
 
     @BeforeInsert()
     generateId() {
-        this.id =  nanoIdGenerator('user_')
+        this.id = ulidGenerator('user_')
     }
 
     @BeforeUpdate()
