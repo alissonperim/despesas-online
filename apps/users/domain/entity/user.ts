@@ -1,9 +1,9 @@
 import { BaseDomain } from '@shared/domain'
 import { MaritalStatus } from '@shared/enums'
 import { ulidGenerator } from '@shared/utils'
-import { BeforeInsert, BeforeUpdate, Column } from 'typeorm'
+import { BeforeInsert, BeforeUpdate, Column, Entity } from 'typeorm'
 
-
+@Entity('users')
 export class User extends BaseDomain {
     @Column(
         {

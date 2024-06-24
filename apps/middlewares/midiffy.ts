@@ -1,4 +1,3 @@
-import 'reflect-metadata'
 import { HttpResponses } from '@shared/httpResponses'
 import express, { Express } from 'express'
 

@@ -21,8 +21,9 @@ export class DataSourceSingleton {
 
     public async initialize(): Promise<DataSource> {
         this.dataSource = AppDataSource()
+        console.log('Database connected', this.dataSource.isInitialized)
         if (!this.dataSource.isInitialized) {
-            await this.dataSource.initialize().then(() => console.log('Database connected'))
+            await this.dataSource.initialize().then(() => console.log('Database connected')).catch((err) => console.error('BUAHEUHAUEHUAEIUAIEU', err))
         }
 
         return this.dataSource

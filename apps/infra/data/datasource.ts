@@ -1,3 +1,4 @@
+import { User } from '@users/domain/entity/user'
 import { DataSource } from 'typeorm'
 
 export const AppDataSource = () => {
@@ -5,10 +6,12 @@ export const AppDataSource = () => {
         type: 'postgres',
         host: 'localhost',
         port: 5432,
-        username: 'pharmacy_db',
-        password: '123456',
-        database: 'pharmacy',
-        entities: [],
+        username: 'db_rent_safe',
+        password: 'Oficial1@3',
+        database: 'rent_safe',
+        entities: [
+            User
+        ],
         migrations: [
             `${'apps/infra/migrations/*.ts'}`
         ],
@@ -21,10 +24,11 @@ export default new DataSource({
     type: 'postgres',
     host: 'localhost',
     port: 5432,
-    username: 'pharmacy_db',
-    password: '123456',
-    database: 'pharmacy',
+    username: 'db_rent_safe',
+    password: 'Oficial1@3',
+    database: 'rent_safe',
     entities: [
+        User
     ],
     migrations: [
         'apps/infra/migrations/*.ts'
