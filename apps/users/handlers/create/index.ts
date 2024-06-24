@@ -1,14 +1,21 @@
 import { User } from '@users/domain/entity/user'
+import { ICreateUserUseCase } from '@users/usecases/contracts/createUser'
 import { NextFunction, Request, Response } from 'express'
-
-
+import { container } from 'tsyringe'
 
 interface CreateUserInput extends Request {
     body: User
 } 
 
-export const createUserHandler = (req: CreateUserInput, res: Response, next: NextFunction) => {
+export const createUserHandler = async (req: CreateUserInput, res: Response, next: NextFunction) => {
     const { body } = req
-    console.log(body)
-    res.status(201).json(body)
+
+    try {
+        const controller = container.resolve<ICreateUserUseCase>('CreateUserUseCase')
+        const response = await controller.execute(body)
+
+        res.created(response)
+    } catch (error) {
+        next(error)
+    }
 } 

@@ -26,3 +26,4 @@ export const HttpExceptions = (err, _: Request, res: Response, next: NextFunctio
 
     res.status(500).json({ message: err.message })
 }
+

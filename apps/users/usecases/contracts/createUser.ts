@@ -1,12 +1,5 @@
 import { IUser } from '@shared/contracts'
-
-export interface ICreateUser {
-  name: string
-  lastName: string
-  phoneNumber: string
-  email: string
-  birthDate: Date
-}
+import { ICreateUser } from '@users/contracts'
 
 export interface ICreateUserUseCase {
   execute(data: ICreateUser): Promise<IUser>
