@@ -3,7 +3,7 @@ import express from 'express'
 import { router } from './routes'
 import { HttpExceptions } from '@shared/httpResponses'
 import { midiffy } from './middlewares/midiffy'
-import { UsersDependencyInjection } from '@users/contracts/dependencyInjection'
+import { UsersDependencyInjection } from '@users/contracts/dependency-injection'
 
 UsersDependencyInjection.execute()
 

@@ -1,5 +1,5 @@
 import { User } from '@users/domain/entity/user'
-import { ICreateUserUseCase } from '@users/usecases/contracts/createUser'
+import { ICreateUserUseCase } from '@users/usecases/contracts/create-user'
 import { NextFunction, Request, Response } from 'express'
 import { container } from 'tsyringe'
 

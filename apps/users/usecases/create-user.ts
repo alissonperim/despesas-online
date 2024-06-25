@@ -2,7 +2,7 @@ import { IUser } from '@shared/contracts'
 import { ICreateUser } from '@users/contracts'
 import { ICreateUserRepository } from '@users/repositories/contracts'
 import { inject, injectable } from 'tsyringe'
-import { ICreateUserUseCase } from './contracts/createUser'
+import { ICreateUserUseCase } from './contracts/create-user'
 
 @injectable()
 export class CreateUserUseCase implements ICreateUserUseCase {
