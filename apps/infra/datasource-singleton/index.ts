@@ -23,7 +23,9 @@ export class DataSourceSingleton {
         this.dataSource = AppDataSource()
         console.log('Database connected', this.dataSource.isInitialized)
         if (!this.dataSource.isInitialized) {
-            await this.dataSource.initialize().then(() => console.log('Database connected')).catch((err) => console.error('BUAHEUHAUEHUAEIUAIEU', {meme: err, msg: err.msg}))
+            await this.dataSource.initialize()
+                .then((ds) => console.log('Database connected', ds.isInitialized))
+                .catch(e => console.log('ERROR', e))
         }
 
         return this.dataSource

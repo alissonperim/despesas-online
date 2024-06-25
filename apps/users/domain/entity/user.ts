@@ -1,7 +1,7 @@
 import { BaseDomain } from '@shared/domain'
 import { MaritalStatus } from '@shared/enums'
-import { ulidGenerator } from '@shared/utils'
-import { BeforeInsert, BeforeUpdate, Column, Entity } from 'typeorm'
+import { DOMAIN, ulidGenerator } from '@shared/utils'
+import { BeforeInsert, Column, Entity } from 'typeorm'
 
 @Entity('users')
 export class User extends BaseDomain {
@@ -70,11 +70,6 @@ export class User extends BaseDomain {
 
     @BeforeInsert()
     generateId() {
-        this.id = ulidGenerator('user_')
-    }
-
-    @BeforeUpdate()
-    beforeUpdate() {
-        this.updatedAt = new Date()
+        this.id = ulidGenerator(DOMAIN.user)
     }
 }

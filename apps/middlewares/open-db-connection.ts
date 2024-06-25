@@ -3,7 +3,6 @@ import { NextFunction, Request, Response } from 'express'
 
 export const openDbConnection = async (_: Request, __: Response, next: NextFunction) => {
 
-    const instance = await DataSourceSingleton.getInstance().initiate()
-    console.log('INSTANCEEEEEEED', instance)
+    await DataSourceSingleton.getInstance().initiate()
     next()
 }

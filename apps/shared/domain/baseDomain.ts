@@ -1,11 +1,10 @@
-import { BeforeInsert, Column, CreateDateColumn, DeleteDateColumn, PrimaryColumn, UpdateDateColumn } from 'typeorm'
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 
 export class BaseDomain {
     @PrimaryColumn(
         {
             name: 'id',
             type: 'varchar',
-            length: 29,
             unique: true,
             nullable: false,
             primary: true,
@@ -40,6 +39,7 @@ export class BaseDomain {
             name: 'created_by',
             type: 'varchar',
             length: 120,
+            nullable: true
         }
     )
     createdBy?: string
@@ -49,6 +49,7 @@ export class BaseDomain {
             name: 'updated_by',
             type: 'varchar',
             length: 120,
+            nullable: true,
         }
     )
     updatedBy?: string
@@ -69,5 +70,10 @@ export class BaseDomain {
         
         this.createdAt = currentDate
         this.updatedAt = currentDate
+    }
+
+    @BeforeUpdate()
+    protected beforeUpdate() {
+        this.updatedAt = new Date()
     }
 }

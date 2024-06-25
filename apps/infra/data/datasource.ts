@@ -4,10 +4,10 @@ import { DataSource } from 'typeorm'
 export const AppDataSource = () => {
     return new DataSource({
         type: 'postgres',
-        host: 'localhost',
+        host: 'database',
         port: 5432,
         username: 'db_rent_safe',
-        password: 'Oficial1@3',
+        password: '',
         database: 'rent_safe',
         entities: [
             User
@@ -25,7 +25,7 @@ export default new DataSource({
     host: 'localhost',
     port: 5432,
     username: 'db_rent_safe',
-    password: 'Oficial1@3',
+    password: '',
     database: 'rent_safe',
     entities: [
         User
