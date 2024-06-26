@@ -8,7 +8,7 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_USER=db_rent_safe
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=Oficial1@3
       - POSTGRES_DB=rent_safe
     volumes:
       - pdgata:/data/postgres

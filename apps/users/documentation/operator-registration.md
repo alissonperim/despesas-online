@@ -1,7 +1,7 @@
 # Aluga Fácil
 
 ## Introdução
-O operador é o responsável por adminitrar os cadastros de alugueis de um locador.
+O operador é o responsável por administrar os cadastros de alugueis de um locador.
 
 ## Casos de Uso
 

@@ -9,7 +9,7 @@ import { DataSourceSingleton } from '@infra/datasource-singleton'
 @injectable()
 export class CreateUserRepository implements ICreateUserRepository {
   private readonly context: Repository<User> = DataSourceSingleton.getRepositoy(User)
-  execute (data: ICreateUser): Promise<IUser> {
+  create (data: ICreateUser): Promise<IUser> {
     return this.context.save(this.context.create(data))
   }
 }

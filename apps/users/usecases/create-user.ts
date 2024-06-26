@@ -12,6 +12,6 @@ export class CreateUserUseCase implements ICreateUserUseCase {
   ) {}
 
   async execute(data: ICreateUser): Promise<IUser> {
-    return this.repository.execute(data)
+    return this.repository.create(data)
   }
 }

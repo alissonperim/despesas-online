@@ -7,7 +7,7 @@ export const AppDataSource = () => {
         host: 'database',
         port: 5432,
         username: 'db_rent_safe',
-        password: '',
+        password: 'Oficial1@3',
         database: 'rent_safe',
         entities: [
             User
@@ -25,7 +25,7 @@ export default new DataSource({
     host: 'localhost',
     port: 5432,
     username: 'db_rent_safe',
-    password: '',
+    password: 'Oficial1@3',
     database: 'rent_safe',
     entities: [
         User

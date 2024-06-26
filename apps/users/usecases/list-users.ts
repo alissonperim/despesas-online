@@ -2,7 +2,8 @@ import { IListUsersRepository } from '@users/repositories/contracts'
 import { IListUsersUseCase } from './contracts'
 import { IUser } from '@shared/domain'
 import { inject, injectable } from 'tsyringe'
-import { userDto } from '@users/domain/user-dto'
+import { listUsersDto } from '@users/domain/user-dto'
+import { IListResponse } from '@shared/utils/list-response'
 
 @injectable()
 export class ListUsersUseCase implements IListUsersUseCase {
@@ -10,9 +11,9 @@ export class ListUsersUseCase implements IListUsersUseCase {
         @inject('ListUsersRepository')
         private readonly listUsersRepository: IListUsersRepository
     ){}
-    async execute(): Promise<IUser[]> {
-        const users = await this.listUsersRepository.execute()
+    async execute(): Promise<IListResponse<IUser>> {
+        const users = await this.listUsersRepository.list()
 
-        return users.map(userDto)
+        return listUsersDto(users)
     }
 }

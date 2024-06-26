@@ -1,5 +1,6 @@
 import { IUser } from '@shared/domain'
 import { User } from './entity/user'
+import { IListResponse } from '@shared/utils/list-response'
 
 export const userDto = ({
     id,
@@ -26,5 +27,11 @@ export const userDto = ({
         phoneNumber,
         updatedAt,
         deletedAt,
+    }
+}
+
+export const listUsersDto = (users: User[]): IListResponse<IUser> => {
+    return {
+        data: users.map(userDto)
     }
 }

@@ -1,3 +1,5 @@
+import { MaritalStatus } from '@shared/enums'
+
 export interface IUser {
     id: string
     name: string
@@ -5,7 +7,7 @@ export interface IUser {
     phoneNumber: string
     email: string
     document: string
-    maritalStatus: string
+    maritalStatus: MaritalStatus
     birthDate: Date
     createdAt: Date
     updatedAt: Date

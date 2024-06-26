@@ -62,14 +62,14 @@ export class User extends BaseDomain {
     @Column(
         {
             name: 'birth_date',
-            type: 'date',
+            type: 'timestamp without time zone',
             nullable: true,
         }
     )
     birthDate!: Date
 
     @BeforeInsert()
-    generateId() {
+    protected generateId() {
         this.id = ulidGenerator(DOMAIN.user)
     }
 }
