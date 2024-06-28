@@ -1,7 +1,7 @@
 import { IUpdateUserRepository } from '@users/repositories/contracts'
 import { IUpdateUserUseCase } from './contracts'
 import { inject, injectable } from 'tsyringe'
-import { IUser } from '@shared/domain'
+import { IUser } from '@packages/types'
 import { DeepPartial } from 'typeorm'
 import { userDto } from '@users/domain/user-dto'
 

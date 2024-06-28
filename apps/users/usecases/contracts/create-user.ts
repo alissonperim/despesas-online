@@ -1,4 +1,4 @@
-import { IUser } from '@shared/contracts'
+import { IUser } from '@packages/types'
 import { ICreateUser } from '@users/contracts'
 
 export interface ICreateUserUseCase {

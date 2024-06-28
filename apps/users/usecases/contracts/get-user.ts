@@ -1,4 +1,4 @@
-import { IUser } from '@shared/domain'
+import { IUser } from '@packages/types'
 
 export interface IGetUserUseCase {
     execute(id: string): Promise<IUser>

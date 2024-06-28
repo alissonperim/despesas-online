@@ -1,4 +1,3 @@
-import { IUser } from '@shared/contracts'
 import { ICreateUser } from '@users/contracts'
 import { User } from '@users/domain/entity/user'
 import { Repository } from 'typeorm'
@@ -9,7 +8,7 @@ import { DataSourceSingleton } from '@infra/datasource-singleton'
 @injectable()
 export class CreateUserRepository implements ICreateUserRepository {
   private readonly context: Repository<User> = DataSourceSingleton.getRepositoy(User)
-  create (data: ICreateUser): Promise<IUser> {
+  create (data: ICreateUser): Promise<User> {
     return this.context.save(this.context.create(data))
   }
 }

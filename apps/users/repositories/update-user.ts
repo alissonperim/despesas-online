@@ -2,8 +2,8 @@ import { User } from '@users/domain/entity/user'
 import { IUpdateUserRepository } from './contracts'
 import { DataSourceSingleton } from '@infra/datasource-singleton'
 import { DeepPartial, Repository } from 'typeorm'
-import { IUser } from '@shared/domain'
 import { injectable } from 'tsyringe'
+import { IUser } from '@packages/types'
 
 @injectable()
 export class UpdateUserRepository implements IUpdateUserRepository {

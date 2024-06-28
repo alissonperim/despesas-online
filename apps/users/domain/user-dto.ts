@@ -1,5 +1,5 @@
-import { IUser } from '@shared/domain'
 import { User } from './entity/user'
+import { IUser } from '@packages/types'
 import { IListResponse } from '@shared/utils/list-response'
 
 export const userDto = ({

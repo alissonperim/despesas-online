@@ -15,5 +15,5 @@ export interface IUser {
     createdBy?: string
     updatedBy?: string
     deletedBy?: string
-  }
+}
   

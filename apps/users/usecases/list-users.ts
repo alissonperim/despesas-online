@@ -1,6 +1,6 @@
 import { IListUsersRepository } from '@users/repositories/contracts'
 import { IListUsersUseCase } from './contracts'
-import { IUser } from '@shared/domain'
+import { IUser } from '@packages/types'
 import { inject, injectable } from 'tsyringe'
 import { listUsersDto } from '@users/domain/user-dto'
 import { IListResponse } from '@shared/utils/list-response'

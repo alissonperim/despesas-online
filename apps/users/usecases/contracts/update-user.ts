@@ -1,4 +1,4 @@
-import { IUser } from '@shared/domain'
+import { IUser } from '@packages/types'
 import { DeepPartial } from 'typeorm'
 
 export interface IUpdateUserUseCase {

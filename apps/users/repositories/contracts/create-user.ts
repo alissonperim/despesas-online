@@ -1,6 +1,6 @@
-import { IUser } from '@shared/contracts'
 import { ICreateUser } from '@users/contracts'
+import { User } from '@users/domain/entity/user'
 
 export interface ICreateUserRepository {
-  create(data: ICreateUser): Promise<IUser>
+  create(data: ICreateUser): Promise<User>
 }

@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe'
 import { IGetUserUseCase } from './contracts'
 import { IGetUserRepository } from '@users/repositories/contracts'
-import { IUser } from '@shared/domain'
+import { IUser } from '@packages/types'
 import { userDto } from '@users/domain/user-dto'
 
 @injectable()
