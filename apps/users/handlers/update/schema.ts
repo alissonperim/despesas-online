@@ -1,4 +1,4 @@
-import { MaritalStatus } from '@shared/enums'
+import { MaritalStatus } from '@packages/types'
 import { DOMAIN } from '@shared/utils'
 import * as yup from 'yup';
 

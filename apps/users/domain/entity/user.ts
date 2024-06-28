@@ -1,5 +1,5 @@
+import { MaritalStatus } from '@packages/types'
 import { BaseDomain } from '@shared/domain'
-import { MaritalStatus } from '@shared/enums'
 import { DOMAIN, ulidGenerator } from '@shared/utils'
 import { BeforeInsert, Column, Entity } from 'typeorm'
 
