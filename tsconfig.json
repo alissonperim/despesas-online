@@ -35,9 +35,10 @@
     "paths": {
       "@users/*": ["apps/users/*"],
       "@shared/*": ["apps/shared/*"],
-      "@infra/*": ["apps/infra/*"],
       "@routes/*": ["apps/routes/*"],
-      "@packages/*": ["packages/*"]
+      "@packages/*": ["packages/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@infra/*": ["infra/*"],
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -115,6 +116,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["apps/**/*.ts", "apps/**/*.tsx", "packages/types/base.ts", "packages/types/user.ts"],
+  "include": [
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "packages/**/*.ts",
+    "middlewares/**/*.ts",
+    "infra/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

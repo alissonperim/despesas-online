@@ -1,4 +1,4 @@
-import { AppDataSource } from '@infra/data/datasource'
+import { AppDataSource } from '@infra/data'
 import { DataSource, EntityTarget, Repository } from 'typeorm'
 
 export class DataSourceSingleton {

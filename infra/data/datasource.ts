@@ -13,7 +13,7 @@ export const AppDataSource = () => {
             User
         ],
         migrations: [
-            `${'apps/infra/migrations/*.ts'}`
+            'infra/migrations/*.ts'
         ],
         poolSize: 20
     })
@@ -31,6 +31,6 @@ export default new DataSource({
         User
     ],
     migrations: [
-        'apps/infra/migrations/*.ts'
+        'infra/migrations/*.ts'
     ]
 })

@@ -1,6 +1,6 @@
 import { User } from '@users/domain/entity/user'
 import { IUpdateUserRepository } from './contracts'
-import { DataSourceSingleton } from '@infra/datasource-singleton'
+import { DataSourceSingleton } from '@infra'
 import { DeepPartial, Repository } from 'typeorm'
 import { injectable } from 'tsyringe'
 import { IUser } from '@packages/types'
