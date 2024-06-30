@@ -1,4 +1,4 @@
-import { IUser } from '@shared/domain'
+import { IUser } from 'shared/domain'
 import { IUpdateUserUseCase } from '@users/usecases/contracts'
 import { NextFunction, Request, Response } from 'express'
 import { container } from 'tsyringe'

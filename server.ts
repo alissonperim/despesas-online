@@ -1,9 +1,9 @@
 import 'reflect-metadata'
 import express from 'express'
-import { router } from './routes'
-import { HttpExceptions } from '@shared/httpResponses'
-import { midiffy } from '../middlewares/midiffy'
+import { midiffy } from './middlewares/midiffy'
 import { UsersDependencyInjection } from '@users/contracts/dependency-injection'
+import { HttpExceptions } from '@shared/http-responses'
+import { router } from './routes'
 
 UsersDependencyInjection.execute()
 
