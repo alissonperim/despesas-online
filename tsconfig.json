@@ -39,6 +39,7 @@
       "@middlewares/*": ["middlewares/*"],
       "@infra/*": ["infra/*"],
       "@shared/*": ["shared/*"],
+      "@entities/*": ["entities/*"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -125,7 +126,8 @@
     "shared/**/*.d.ts",
     "shared/**/*.ts",
     "routes/**/*.ts",
+    "entities/**/*.ts",
     "server.ts"
-  ],
+, "entities/base.ts"  ],
   "exclude": ["node_modules"]
 }

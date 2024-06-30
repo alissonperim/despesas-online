@@ -1,4 +1,4 @@
-import { User } from '@users/domain/entity/user'
+import { User } from '@entities/user'
 import { IUpdateUserRepository } from './contracts'
 import { DataSourceSingleton } from '@infra/datasource-singleton'
 import { DeepPartial, Repository } from 'typeorm'

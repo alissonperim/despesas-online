@@ -1,4 +1,4 @@
-import { User } from '@users/domain/entity/user'
+import { User } from '@entities/user'
 
 export interface IListUsersRepository {
     list(): Promise<User[]>

@@ -1,6 +1,14 @@
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, PrimaryColumn, UpdateDateColumn } from 'typeorm'
+import { 
+    BeforeInsert,
+    BeforeUpdate,
+    Column,
+    CreateDateColumn,
+    DeleteDateColumn,
+    PrimaryColumn,
+    UpdateDateColumn
+} from 'typeorm'
 
-export class BaseDomain {
+export class Base {
     @PrimaryColumn(
         {
             name: 'id',

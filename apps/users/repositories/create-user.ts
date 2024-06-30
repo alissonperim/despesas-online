@@ -1,5 +1,5 @@
 import { ICreateUser } from '@users/contracts'
-import { User } from '@users/domain/entity/user'
+import { User } from '@entities/user'
 import { Repository } from 'typeorm'
 import { ICreateUserRepository } from './contracts'
 import { injectable } from 'tsyringe'

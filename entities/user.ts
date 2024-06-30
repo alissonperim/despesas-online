@@ -1,10 +1,10 @@
 import { MaritalStatus } from '@packages/types'
-import { BaseDomain } from 'shared/domain'
 import { DOMAIN, ulidGenerator } from '@shared/utils'
 import { BeforeInsert, Column, Entity } from 'typeorm'
+import { Base } from './base'
 
 @Entity('users')
-export class User extends BaseDomain {
+export class User extends Base {
     @Column(
         {
             type: 'varchar',

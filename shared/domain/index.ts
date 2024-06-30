@@ -1,1 +1,1 @@
-export * from './baseDomain'
+export * from './domain-utils'
