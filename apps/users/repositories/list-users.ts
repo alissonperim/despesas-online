@@ -1,7 +1,7 @@
 import { User } from '@users/domain/entity/user'
 import { IListUsersRepository } from './contracts'
 import { Repository } from 'typeorm'
-import { DataSourceSingleton } from '@infra'
+import { DataSourceSingleton } from '@infra/datasource-singleton'
 import { injectable } from 'tsyringe'
 
 @injectable()

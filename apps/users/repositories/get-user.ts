@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm'
-import { DataSourceSingleton } from '@infra'
+import { DataSourceSingleton } from '@infra/datasource-singleton'
 import { User } from '@users/domain/entity/user'
 import { injectable } from 'tsyringe'
 import { IGetUserRepository } from './contracts'

@@ -1,4 +1,4 @@
-import { HttpResponses } from '@shared/httpResponses'
+import { HttpResponses } from '@shared/http-responses'
 import express, { Express } from 'express'
 
 export const midiffy = (app: Express) => {
