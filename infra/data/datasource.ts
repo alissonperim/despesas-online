@@ -1,16 +1,27 @@
+import 'dotenv/config'
 import { User } from '@entities/user'
 import { DataSource } from 'typeorm'
+import { Address } from '@entities/address'
+
+const {
+    DB_NAME,
+    DB_PORT,
+    DB_HOST,
+    DB_PW,
+    DB_USER,
+} = process.env
 
 export const AppDataSource = () => {
     return new DataSource({
         type: 'postgres',
-        host: 'database',
-        port: 5432,
-        username: 'db_rent_safe',
-        password: 'Oficial1@3',
-        database: 'rent_safe',
+        host: DB_HOST,
+        port: +DB_PORT,
+        username: DB_USER,
+        password: DB_PW,
+        database: DB_NAME,
         entities: [
-            User
+            User,
+            Address
         ],
         migrations: [
             'infra/migrations/*.ts'
@@ -22,11 +33,11 @@ export const AppDataSource = () => {
 
 export default new DataSource({
     type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'db_rent_safe',
-    password: 'Oficial1@3',
-    database: 'rent_safe',
+    host: DB_HOST,
+    port: +DB_PORT,
+    username: DB_USER,
+    password: DB_PW,
+    database: DB_NAME,
     entities: [
         User
     ],

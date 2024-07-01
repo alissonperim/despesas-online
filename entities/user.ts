@@ -1,56 +1,10 @@
 import { MaritalStatus } from '@packages/types'
 import { DOMAIN, ulidGenerator } from '@shared/utils'
 import { BeforeInsert, Column, Entity } from 'typeorm'
-import { Base } from './base'
+import { PersonalData } from './personal-data'
 
 @Entity('users')
-export class User extends Base {
-    @Column(
-        {
-            type: 'varchar',
-            length: 120,
-        }
-    )
-    name!: string
-
-    @Column(
-        {
-            name: 'last_name',
-            type: 'varchar',
-            length: 120,
-        }
-    )
-    lastName!: string
-
-    @Column(
-        {
-            name: 'phone_number',
-            type: 'varchar',
-            length: 14,
-            unique: true,
-        }
-    )
-    phoneNumber!: string
-
-    @Column(
-        {
-            name: 'email',
-            type: 'varchar',
-            length: 120,
-            unique: true,
-        },
-    )
-    email!: string
-
-    @Column(
-        {
-            type: 'varchar',
-            length: 11,
-            unique: true,
-        }
-    )
-    document!: string
-
+export class User extends PersonalData {
     @Column(
         {
             type: 'enum',
@@ -58,15 +12,6 @@ export class User extends Base {
         }
     )
     maritalStatus!: MaritalStatus
-
-    @Column(
-        {
-            name: 'birth_date',
-            type: 'timestamp without time zone',
-            nullable: true,
-        }
-    )
-    birthDate!: Date
 
     @BeforeInsert()
     protected generateId() {
