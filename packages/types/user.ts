@@ -1,3 +1,5 @@
+import { IAddress } from './address'
+
 export enum MaritalStatus {
     SINGLE = 'single',
     MARRIED = 'married',
@@ -13,6 +15,7 @@ export interface IUser {
     email: string
     document: string
     maritalStatus: MaritalStatus
+    address: IAddress
     birthDate: Date
     createdAt: Date
     updatedAt: Date

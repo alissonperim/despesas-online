@@ -11,30 +11,22 @@ export class UpdateUserRepository implements IUpdateUserRepository {
     private readonly context: Repository<User> = DataSourceSingleton.getRepositoy(User)
 
     async update (id: string, data: DeepPartial<IUser>): Promise<User> {
-        let user = await this.context.findOne({ where: { id }})
-
-        if (!user) {
-            throw new BadRequestException('User not found')
-        }
-
-        user = {
-            ...user,
-            ...data
-        } as User
-
-        await this.context.createQueryBuilder().update(User)
+        const { name, lastName, maritalStatus, address, birthDate } = data
+        const update = await this.context.createQueryBuilder().update(User)
             .set(
                 {
-                    name: user.name,
-                    lastName: user.lastName,
-                    maritalStatus: user.maritalStatus,
-                    address: user.address,
-                    birthDate: user.birthDate,
+                    name: name,
+                    lastName: lastName,
+                    maritalStatus: maritalStatus,
+                    address: address,
+                    birthDate: birthDate,
                 }
             )
             .where('id = :id', { id })
             .execute()
-        
-        return user
+
+        if (update.affected === 0) throw new BadRequestException('User not found')
+
+        return this.context.findOneOrFail({where: { id }})
     }
 }
