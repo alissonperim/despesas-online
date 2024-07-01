@@ -1,4 +1,4 @@
-import { IUser } from 'shared/domain'
+import { IUser } from '@packages/types'
 import { IUpdateUserUseCase } from '@users/usecases/contracts'
 import { NextFunction, Request, Response } from 'express'
 import { container } from 'tsyringe'
@@ -12,6 +12,7 @@ interface UpdateUserInput extends Request {
 }
 
 export const updateUserHandler = async (req: UpdateUserInput, res: Response, next: NextFunction) => {
+    console.log('PARAMS', req.params)
     const { id } = req.params
     const data = req.body
 

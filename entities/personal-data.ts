@@ -1,4 +1,4 @@
-import { Column, JoinColumn, OneToOne, Relation } from 'typeorm'
+import { Column, Index, JoinColumn, OneToOne, Relation } from 'typeorm'
 import { Base } from './base'
 import { Address } from './address'
 
@@ -20,6 +20,11 @@ export class PersonalData extends Base {
     )
     lastName!: string
 
+    @Index(
+        {
+            unique: true
+        }
+    )
     @Column(
         {
             name: 'phone_number',
@@ -30,6 +35,11 @@ export class PersonalData extends Base {
     )
     phoneNumber!: string
 
+    @Index(
+        {
+            unique: true
+        }
+    )
     @Column(
         {
             name: 'email',
@@ -40,6 +50,11 @@ export class PersonalData extends Base {
     )
     email!: string
 
+    @Index(
+        {
+            unique: true
+        }
+    )
     @Column(
         {
             type: 'varchar',

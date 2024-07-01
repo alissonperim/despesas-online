@@ -7,6 +7,7 @@ import { listUsersHandler } from './handlers/list'
 import { getUserSchema } from './handlers/get/schema'
 import { getUserHandler } from './handlers/get'
 import { updateUserPathSchema, updateUserSchema } from './handlers/update/schema'
+import { updateUserHandler } from './handlers/update'
 
 const router = Router()
 
@@ -15,7 +16,7 @@ router.put('/:id',
     pathParamsValidations(updateUserPathSchema),
     schemaValidations(updateUserSchema),
     openDbConnection,
-    createUserHandler
+    updateUserHandler
 )
 router.get('/:id', pathParamsValidations(getUserSchema), openDbConnection, getUserHandler)
 router.get('/', openDbConnection, listUsersHandler)

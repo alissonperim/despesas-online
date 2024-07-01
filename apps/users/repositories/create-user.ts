@@ -12,7 +12,7 @@ export class CreateUserRepository implements ICreateUserRepository {
   async create (data: ICreateUser): Promise<User> {
     const user = this.context.create(data)
 
-    const userExists = await this.context.findOne({ where: { email: user.email, phoneNumber: user.phoneNumber, document: user.document } })
+    const userExists = await this.context.findOne({ where: [{ email: user.email }, { document: user.document }, { phoneNumber: user.phoneNumber }]})
 
     if (userExists) throw new CreateException('User already exists')
 
