@@ -1,4 +1,4 @@
-import { BaseException } from '@shared/exceptions/baseException'
+import { BaseException } from '@shared/exceptions/base-exception'
 import { NextFunction, Request, Response } from 'express'
 
 export interface IHttpResponse {
@@ -22,8 +22,8 @@ export const HttpExceptions = (err, _: Request, res: Response, next: NextFunctio
     if (err instanceof BaseException) {
         res.status(err.statusCode).json({ message: err.message, code: err.code,})
         next()
+    } else {
+        res.status(500).json({ message: err.message })
     }
-
-    res.status(500).json({ message: err.message })
 }
 

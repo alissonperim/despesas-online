@@ -30,16 +30,24 @@ export const AppDataSource = () => {
     })
 }
 
+console.log({
+    DB_NAME,
+    DB_PORT,
+    DB_HOST,
+    DB_PW,
+    DB_USER,
+})
 
 export default new DataSource({
     type: 'postgres',
-    host: DB_HOST,
+    host: 'localhost',
     port: +DB_PORT,
     username: DB_USER,
     password: DB_PW,
     database: DB_NAME,
     entities: [
-        User
+        User,
+        Address,
     ],
     migrations: [
         'infra/migrations/*.ts'

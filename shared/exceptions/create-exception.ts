@@ -1,4 +1,4 @@
-import { BaseException } from './baseException'
+import { BaseException } from './base-exception'
 
 export class CreateException extends BaseException {
     constructor(message: string) {

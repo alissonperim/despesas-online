@@ -2,7 +2,6 @@ import { Column, JoinColumn, OneToOne, Relation } from 'typeorm'
 import { Base } from './base'
 import { Address } from './address'
 
-
 export class PersonalData extends Base {
     @Column(
         {

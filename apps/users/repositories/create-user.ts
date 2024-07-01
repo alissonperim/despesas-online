@@ -4,11 +4,18 @@ import { Repository } from 'typeorm'
 import { ICreateUserRepository } from './contracts'
 import { injectable } from 'tsyringe'
 import { DataSourceSingleton } from '@infra/datasource-singleton'
+import { CreateException } from '@shared/exceptions/create-exception'
 
 @injectable()
 export class CreateUserRepository implements ICreateUserRepository {
   private readonly context: Repository<User> = DataSourceSingleton.getRepositoy(User)
-  create (data: ICreateUser): Promise<User> {
-    return this.context.save(this.context.create(data))
+  async create (data: ICreateUser): Promise<User> {
+    const user = this.context.create(data)
+
+    const userExists = await this.context.findOne({ where: { email: user.email, phoneNumber: user.phoneNumber, document: user.document } })
+
+    if (userExists) throw new CreateException('User already exists')
+
+    return this.context.save(user)
   }
 }
